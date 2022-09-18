@@ -11,15 +11,8 @@ root to: "homes#top"
 get 'homes/about'
 
   namespace :public do
-    get 'users/show'
-    get 'users/index'
-    get 'users/edit'
-  end
-  namespace :public do
-    get 'dresses/new'
-    get 'dresses/show'
-    get 'dresses/index'
-    get 'dresses/edit'
+    resources :dresses, only: [:new, :create, :index, :show, :destroy]
+    resources :users, only: [:show, :index, :edit, :update]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

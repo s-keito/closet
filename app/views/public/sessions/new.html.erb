@@ -1,5 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-10">
+      <div class="center-block">
 <h2>Log in</h2>
-
+</div>
 <%= form_with model: @user, url: user_session_path do |f| %>
   <div class="field">
   <%= f.label :name %><br>
@@ -24,3 +28,8 @@
 <% end %>
 
 <%= render "public/shared/links" %>
+    </div>
+    <div class="col-xl-2">
+    </div>
+  </div>
+</div>
