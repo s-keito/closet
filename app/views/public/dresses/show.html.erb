@@ -1,2 +1,13 @@
-<h1>Public::Dresses#show</h1>
-<p>Find me in app/views/public/dresses/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+            <%= image_tag @dress.get_image %><br>
+             <%= link_to edit_public_dress_path(@dress) do %>
+              <button type="button" class="btn btn-secondary">edit</button>
+             <% end %><br>
+             <%= @dress.caption %>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>

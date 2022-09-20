@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users,skip: [:passwords], controllers: {
+  devise_for :users, controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
-devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  devise_for :admin, controllers: {
   sessions: "admin/sessions"
 }
 
@@ -11,11 +11,11 @@ root to: "homes#top"
 get 'homes/about'
 
   namespace :public do
-    resources :dresses, only: [:new, :create, :index, :show, :destroy]
+    resources :dresses, only: [:new, :create, :index, :show, :destroy, :edit, :update]
     resources :users, only: [:show, :index, :edit, :update]
-     devise_scope :user do
-     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-     end
+    # devise_scope :user do
+    # post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    # end
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

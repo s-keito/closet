@@ -1,0 +1,24 @@
+<table class='table'>
+  <tr><%= image_tag user.get_user_image, size:'100x100' %></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+    <th>follows</th>
+  </tr>
+  <tr>
+    <th>followers</th>
+  </tr>
+   <th>posts</th>
+</table>
+
+
+ <%= link_to edit_public_user_path(user) do %>
+  <button type="button" class="btn btn-secondary">usre edit</button>
+ <% end %><br>
+<button type="button" class="btn btn-secondary">follow</button><br>
+<button type="button" class="btn btn-secondary">DM</button><br>
+
+<button class="css-cgslon" type="button" aria-label="twitterでシェア"><span class="fa fa-fw fa-twitter"></span></button>
+<button class="css-cgslon" type="button" aria-label="facebookでシェア"><span class="fa fa-fw fa-facebook"></span></button>

@@ -1,2 +1,15 @@
-<h1>Public::Users#index</h1>
-<p>Find me in app/views/public/users/index.html.erb</p>
+<table class='table-secondary'>
+<thead>
+</thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to @user do %>
+          <%= image_tag user.get_user_image, size:'50x50' %>
+        <% end %>
+        </td>
+        <td><%= link_to user.name  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

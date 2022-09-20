@@ -29,14 +29,11 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   def after_sign_out_path_for(resource)
-    about_path
+    homes_about_path
   end
 
 protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  end
 
   def guest_sign_in
     user = User.guest
