@@ -1,13 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm"></div>
-    <div class="col-sm">
+    <div class="col"></div>
+    <div class="col">
             <%= image_tag @dress.get_image %><br>
-             <%= link_to edit_public_dress_path(@dress) do %>
+            <%= @dress.caption %><br>
+            <%= @dress.season %><br>
+             <%= link_to edit_dress_path(@dress) do %>
               <button type="button" class="btn btn-secondary">edit</button>
-             <% end %><br>
-             <%= @dress.caption %>
+             <% end %>
+             <%= link_to dress_path(@dress), method: :patch do %>
+             <button type="button" class="btn btn-secondary">delete</button>
+             <% end %>
+
     </div>
-    <div class="col-sm"></div>
+    <div class="col"></div>
   </div>
 </div>

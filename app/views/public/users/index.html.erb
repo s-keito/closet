@@ -1,15 +1,23 @@
-<table class='table-secondary'>
-<thead>
-</thead>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th>follow</th>
+      <th>follower</th>
+    </tr>
+  </thead>
   <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to @user do %>
+    <tr>
+      <td>
           <%= image_tag user.get_user_image, size:'50x50' %>
-        <% end %>
-        </td>
-        <td><%= link_to user.name  %></td>
-      </tr>
+      </td>
+      <td><%= link_to user.name  %></td>
+      <td>#</td>
+      <td>#</td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+

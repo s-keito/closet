@@ -1,0 +1,13 @@
+<h3>items</h3>
+<table class='table table-hover table-inverse'>
+  <tbody>
+    <% dresses.each do |dress| %>
+      <tr>
+        <td><%= link_to dress_path(dress)  do %>
+          <%= image_tag dress.get_image, size:'50x50' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

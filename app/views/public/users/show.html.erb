@@ -1,18 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-xl-2">
       <%= render "public/users/info", user: @user %>
     </div>
-    <div class="col-1">
+    <div class="col-xl-10">
+    <h3 class="text-success">introduction</h3>
+    	  <h6><%= @user.introduction %></h6>
 
-    </div>
-    <div class="col-8">
-    　<div class="jumbotron jumbotron-fluid">
-      <div class="container">
-    	  <h3 class="lead">introduction</h3>
-    	  <p><%= @user.introduction %></p>
-      </div>
-    　</div>
+    <h3 class="text-success">items</h3>
+    <%= render "public/dresses/user_dresses", dresses: @dresses, user: @user %>
 
 
 

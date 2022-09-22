@@ -1,3 +1,19 @@
+.center-block {
+  margin: 30px auto;
+}
+
+.table {
+  width: 60%;
+  margin: 10px auto;
+}
+
+.table {
+  float: left;
+}
+
+.text-success {
+  margin: 30px auto;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

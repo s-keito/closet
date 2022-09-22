@@ -3,7 +3,7 @@
     <div class="col-sm"></div>
     <div class="col-sm">
 
-<%= form_with model: @dress, url: public_dresses_path, local:true do |f| %>
+<%= form_with model: @dress, url: dresses_path, local:true do |f| %>
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, accept: "image/*" %>
@@ -14,7 +14,7 @@
   </div>
 
 
- <%= f.select :season, [['all season',0], ['spring',1], ['summer',2], ['autumn',3], ['winter',4]] %>
+ <%= f.select :season, [['all season',0.to_i], ['spring',1.to_i], ['summer',2.to_i], ['autumn',3.to_i], ['winter',4.to_i]] %>
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>

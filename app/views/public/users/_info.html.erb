@@ -1,8 +1,10 @@
 <table class='table'>
-  <tr><%= image_tag user.get_user_image, size:'100x100' %></tr>
+  <tbody class="table">
   <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
+  <th><%= image_tag user.get_user_image, size:'100x100' %></th>
+  </tr>
+  <tr>
+	  <th>name:<%= user.name %></th>
   </tr>
   <tr>
     <th>follows</th>
@@ -11,14 +13,24 @@
     <th>followers</th>
   </tr>
    <th>posts</th>
-</table>
+   </tbody>
+   </table>
 
 
- <%= link_to edit_public_user_path(user) do %>
+<% if user.name != "guestuser" %>
+ <%= link_to edit_user_path(user) do %>
+ <div class="btn">
   <button type="button" class="btn btn-secondary">usre edit</button>
- <% end %><br>
-<button type="button" class="btn btn-secondary">follow</button><br>
-<button type="button" class="btn btn-secondary">DM</button><br>
+ <% end %>
+<% end %>
+</div><br>
+<div class="btn">
+<button type="button" class="btn btn-secondary">follow</button>
+  </div><br>
+  <div class="btn">
+<button type="button" class="btn btn-secondary">DM</button>
+</div><br>
 
-<button class="css-cgslon" type="button" aria-label="twitterでシェア"><span class="fa fa-fw fa-twitter"></span></button>
-<button class="css-cgslon" type="button" aria-label="facebookでシェア"><span class="fa fa-fw fa-facebook"></span></button>
+
+<!--<button class="css-cgslon" type="button" aria-label="twitterでシェア"><span class="fa fa-fw fa-twitter"></span></button>-->
+<!--<button class="css-cgslon" type="button" aria-label="facebookでシェア"><span class="fa fa-fw fa-facebook"></span></button>-->

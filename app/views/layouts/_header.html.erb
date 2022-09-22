@@ -9,17 +9,17 @@
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li>
-            <%= link_to public_user_path(current_user),class: 'nav-link text-light' do %>
+            <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
               <i class="fas fa-home"></i> my page
             <% end %>
           </li>
           <li>
-            <%=  link_to new_public_dress_path,class: 'nav-link text-light' do %>
+            <%=  link_to new_dress_path,class: 'nav-link text-light' do %>
               <i class="fas fa-users"></i> new closet
             <% end %>
           </li>
           <li>
-            <%=  link_to public_users_path ,class: 'nav-link text-light' do %>
+            <%=  link_to users_path ,class: 'nav-link text-light' do %>
               <i class="fas fa-book-open"></i> others
             <% end %>
           </li>
@@ -35,7 +35,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to homes_about_path,class: 'nav-link text-light' do %>
+            <%= link_to about_path,class: 'nav-link text-light' do %>
               <i class="fas fa-link"></i> about
             <% end %>
           </li>
@@ -58,6 +58,9 @@
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <div class="welcome">
+     ようこそ、<%= current_user.name %>さん！
+     </div>
   </form>
 </nav>
 

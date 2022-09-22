@@ -16,7 +16,7 @@ class Public::DressesController < ApplicationController
     @dress = Dress.new(dress_params)
     @dress.user_id = current_user.id
     if @dress.save
-      redirect_to public_user_path(@dress), notice: "You have created book successfully."
+      redirect_to user_path(@dress), notice: "You have created book successfully."
     else
       @dresses = Dress.all
       render 'index'
