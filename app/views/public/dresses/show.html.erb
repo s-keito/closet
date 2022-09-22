@@ -8,7 +8,7 @@
              <%= link_to edit_dress_path(@dress) do %>
               <button type="button" class="btn btn-secondary">edit</button>
              <% end %>
-             <%= link_to dress_path(@dress), method: :patch do %>
+             <%= link_to dress_path(@dress), method: :delete,"data-confirm" => "本当に削除しますか？" do %>
              <button type="button" class="btn btn-secondary">delete</button>
              <% end %>
 

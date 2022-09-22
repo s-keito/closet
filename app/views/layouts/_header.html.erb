@@ -8,6 +8,9 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
+            <div class="welcome">
+             ようこそ、<%= current_user.name %>さん！
+             </div>
           <li>
             <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
               <i class="fas fa-home"></i> my page
@@ -58,9 +61,6 @@
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    <div class="welcome">
-     ようこそ、<%= current_user.name %>さん！
-     </div>
   </form>
 </nav>
 

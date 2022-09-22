@@ -16,7 +16,7 @@ class Public::DressesController < ApplicationController
     @dress = Dress.new(dress_params)
     @dress.user_id = current_user.id
     if @dress.save
-      redirect_to user_path(@dress), notice: "You have created book successfully."
+      redirect_to user_path(@dress.user), notice: "You have created book successfully."
     else
       @dresses = Dress.all
       render 'index'
@@ -30,15 +30,16 @@ class Public::DressesController < ApplicationController
   def update
     @dress = Dress.find(params[:id])
     if @dress.update(dress_params)
-      redirect_to public_dress_path(@dress), notice: "You have updated book successfully."
+      redirect_to dress_path(@dress), notice: "You have updated book successfully."
     else
       render "edit"
     end
   end
 
   def destroy
+    @dress = Dress.find(params[:id])
     @dress.destroy
-    redirect_to public_dresses_path
+    redirect_to user_path(@dress.user)
   end
 
   private
