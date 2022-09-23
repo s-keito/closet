@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get "home/about" => "homes#about", as: "about"
-    resources :dresses, only: [:new, :show, :index, :edit, :create, :update, :destroy]
+    resources :dresses, only: [:new, :create, :show, :index, :edit, :update, :destroy]
     resources :users, only: [:show, :index, :edit, :update]
     #resources :comments
     #resources :favorites do
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :dresses
     resources :users
-    #resources :categories
+    resources :seasons, only: [:new, :create, :show, :index, :edit, :update, :destroy]
   end
 
   devise_scope :user do

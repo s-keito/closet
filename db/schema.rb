@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_23_004120) do
+ActiveRecord::Schema.define(version: 2022_09_23_022941) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,11 +52,26 @@ ActiveRecord::Schema.define(version: 2022_09_23_004120) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "dress_seasons", force: :cascade do |t|
+    t.integer "dress_id", null: false
+    t.integer "season_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dress_id"], name: "index_dress_seasons_on_dress_id"
+    t.index ["season_id"], name: "index_dress_seasons_on_season_id"
+  end
+
   create_table "dresses", force: :cascade do |t|
     t.integer "user_id"
     t.integer "season_id"
     t.text "caption"
     t.integer "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "seasonal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,4 +94,6 @@ ActiveRecord::Schema.define(version: 2022_09_23_004120) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "dress_seasons", "dresses"
+  add_foreign_key "dress_seasons", "seasons"
 end

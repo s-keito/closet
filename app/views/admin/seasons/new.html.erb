@@ -1,0 +1,7 @@
+<h3>season登録</h3>
+
+<%= form_with model: @season, url: admin_seasons_path do |f|%>
+<%= f.text_field :type %>
+<%= f.submit '投稿' %>
+<% end %>
+

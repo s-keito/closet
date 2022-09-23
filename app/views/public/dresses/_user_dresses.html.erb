@@ -1,4 +1,27 @@
 <h3>items</h3>
+
+<div class="check_box">
+  <%= form_with model: @season, local:true do |f| %>
+  <%= f.radio_button :seasonal, "all" %>
+  <%= f.label :seasonal, "all" %>
+
+  <%= f.radio_button :seasonal, "spring" %>
+  <%= f.label :seasonal, "spring" %>
+
+  <%= f.radio_button :seasonal, "summer" %>
+  <%= f.label :seasonal, "summer" %>
+
+  <%= f.radio_button :seasonal, "autumn" %>
+  <%= f.label :seasonal, "autumn" %>
+
+  <%= f.radio_button :seasonal, "winter" %>
+  <%= f.label :seasonal, "winter" %>
+
+
+ <% end %>
+
+
+
     <% dresses.each_slice(4) do |dress| %>
      <div class ="image">
        <% dress.each do |image| %>
