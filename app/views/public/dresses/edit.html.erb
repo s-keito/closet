@@ -9,9 +9,9 @@
     <%= f.text_area :caption, class: 'form-control dress_caption' %>
   </div>
 
-
- <%= f.select :season, [['all season',0], ['spring',1], ['summer',2], ['autumn',3], ['winter',4]] %>
-
+<div class="form-group">
+ <%= f.select :season, Dress.seasons.keys %>
+</div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
   </div>

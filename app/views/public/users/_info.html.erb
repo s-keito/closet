@@ -13,23 +13,28 @@
     <th>followers</th>
   </tr>
    <th>posts</th>
-   </tbody>
-   </table>
 
-
+  <tr><th>
 <% if user.name != "guestuser" %>
  <%= link_to edit_user_path(user) do %>
  <div class="btn">
-  <button type="button" class="btn btn-secondary">usre edit</button>
+  <button type="button" class="btn btn-secondary">usre_edit</button>
  <% end %>
 <% end %>
-</div><br>
+</div>
+</th></tr>
+<tr><th>
 <div class="btn">
 <button type="button" class="btn btn-secondary">follow</button>
-  </div><br>
+  </div>
+  </th></tr>
+  <tr><th>
   <div class="btn">
 <button type="button" class="btn btn-secondary">DM</button>
-</div><br>
+</div>
+</th></tr>
+  </tbody>
+ </table>
 
 
 <!--<button class="css-cgslon" type="button" aria-label="twitterでシェア"><span class="fa fa-fw fa-twitter"></span></button>-->
