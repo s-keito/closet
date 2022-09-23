@@ -8,6 +8,16 @@
     	  <h6><%= @user.introduction %></h6>
 
     <h3 class="text-success">items</h3>
+    <div class="check_box">
+      <h5>ジャンル検索</h5>
+      <%= form_with model: @season, class: 'boards__searchForm' do %>
+      <% @seasons.each do |season| %>
+      <div class="tag-box">
+        <%= link_to season.seasonal, user_path(seasonal: season.id) %>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
     <%= render "public/dresses/user_dresses", dresses: @dresses, user: @user %>
 
 

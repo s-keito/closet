@@ -5,7 +5,7 @@
             <%= image_tag @dress.get_image, size: '400x400' %><br>
             <%= @dress.caption %><br>
             <%= @dress.category %><br>
-            <!--</%= @season.seasonal %>-->
+            <%= @season %><br>
              <%= link_to edit_dress_path(@dress) do %>
               <button type="button" class="btn btn-secondary">edit</button>
              <% end %>

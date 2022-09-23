@@ -2,7 +2,6 @@ class Public::DressesController < ApplicationController
 
   def show
     @dress = Dress.find(params[:id])
-    #@season = Season.find(params[:season_id])
   end
 
   def index
@@ -46,8 +45,10 @@ class Public::DressesController < ApplicationController
   private
 
   def dress_params
-    params.require(:dress).permit(:image, :category, :caption, :season_id)
+    params.require(:dress).permit(:image, :category, :caption, :season_id, :seasonal)
   end
+
+
 
   def ensure_correct_user
     @dress = Dress.find(params[:id])

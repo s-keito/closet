@@ -5,7 +5,8 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @dresses = @user.dresses
+    @seasons = Season.all
+    @dresses = params[:seasonal].present? ? Season.find(params[:seasonal]).dresses : Dress.all
   end
 
   def index
