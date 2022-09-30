@@ -5,7 +5,9 @@ class Public::DressesController < ApplicationController
   end
 
   def index
-    @dresses = Dress.all
+    @dresses = Dress.all.order(created_at: :desc)
+    @seasons = Season.all
+    @dresses = params[:seasonal].present? ? Season.find(params[:seasonal]).dresses : Dress.all
   end
 
   def new
@@ -45,7 +47,7 @@ class Public::DressesController < ApplicationController
   private
 
   def dress_params
-    params.require(:dress).permit(:image, :category, :caption, :season_id, :seasonal)
+    params.require(:dress).permit(:image, :category, :caption, :seasonal)
   end
 
 

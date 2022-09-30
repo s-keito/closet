@@ -1,14 +1,9 @@
-<h3>items</h3>
-
-
-
-
-    <% dresses.each_slice(4) do |dress| %>
-     <div class ="image">
-       <% dress.each do |image| %>
-          <%= link_to dress_path(dress)  do %>
-          <%= image_tag image.get_image, size:'200x200' %>
-          <% end %>
-        <% end %>
-      </div>
+<% user.dresses.each_slice(4) do |dress| %>
+ <div class ="image">
+   <% dress.each do |image| %>
+      <%= link_to dress_path(dress)  do %>
+      <%= image_tag image.get_image, size:'200x200' %>
+      <% end %>
     <% end %>
+  </div>
+<% end %>

@@ -1,40 +1,37 @@
-<table class='table'>
-  <tbody class="table">
-  <tr>
-  <th><%= image_tag user.get_user_image, size:'100x100' %></th>
-  </tr>
-  <tr>
-	  <th>name:<%= user.name %></th>
-  </tr>
-  <tr>
-    <th>follows</th>
-  </tr>
-  <tr>
-    <th>followers</th>
-  </tr>
-   <th>posts</th>
-
-  <tr><th>
-<% if user.name != "guestuser" %>
- <%= link_to edit_user_path(user) do %>
- <div class="btn">
-  <button type="button" class="btn btn-secondary">usre_edit</button>
- <% end %>
-<% end %>
-</div>
-</th></tr>
-<tr><th>
-<div class="btn">
-<button type="button" class="btn btn-secondary">follow</button>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <%= image_tag user.get_user_image, style: "border-radius: 50%; width: 100px; height: 100px; object-fit:cover;" %>
+  	    <p><%= user.name %></p>
+  	     <!--<a href="#!" class="card-link">usre_edit</a>-->
+          <% if user.name != "guestuser" %>
+           <%= link_to edit_user_path(user) do %>
+           <div class="btn">
+            <button type="button" class="btn btn-secondary">usre_edit</button>
+           <% end %>
+          <% end %>
+          </div>
+          <!--<a href="#!" class="card-link">Another link</a>-->
+          <div class="btn">
+          <button type="button" class="btn btn-secondary">follow</button>
+          </div>
+          <div class="btn">
+          <button type="button" class="btn btn-secondary">DM</button>
+          </div>
+	  </div>
+	  <div class="col-1"></div>
+    <div class="col-9">
+        <div class="card-body">
+          <h3 class="text-success">introduction</h3>
+          <p class="card-text">
+           <%= @user.introduction %>
+          </p>
+         <div>follow followed post</div>
+        </div>
+      </div>
+    </div>
   </div>
-  </th></tr>
-  <tr><th>
-  <div class="btn">
-<button type="button" class="btn btn-secondary">DM</button>
-</div>
-</th></tr>
-  </tbody>
- </table>
+
 
 
 <!--<button class="css-cgslon" type="button" aria-label="twitterでシェア"><span class="fa fa-fw fa-twitter"></span></button>-->

@@ -1,29 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-xl-2">
       <%= render "public/users/info", user: @user %>
-    </div>
-    <div class="col-xl-10">
-    <h3 class="text-success">introduction</h3>
-    	  <h6><%= @user.introduction %></h6>
+  </div>
 
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
     <h3 class="text-success">items</h3>
-    <div class="check_box">
-      <h5>ジャンル検索</h5>
-      <%= form_with model: @season, class: 'boards__searchForm' do %>
-      <% @seasons.each do |season| %>
-      <div class="tag-box">
-        <%= link_to season.seasonal, user_path(seasonal: season.id) %>
-      </div>
-      <% end %>
-    <% end %>
+    <h5>シーズン検索</h5>
+    <%= render "public/dresses/user_dresses", user: @user %>
     </div>
-    <%= render "public/dresses/user_dresses", dresses: @dresses, user: @user %>
-
-
-
-
-
-    </div>
+    <div class="col-1"></div>
   </div>
 </div>

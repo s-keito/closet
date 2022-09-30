@@ -8,22 +8,24 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-            <div class="welcome">
-             ようこそ、<%= current_user.name %>さん！
-             </div>
           <li>
             <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> my page
+            <i class="far fa-smile"></i> <%= current_user.name %>'s page
             <% end %>
           </li>
           <li>
             <%=  link_to new_dress_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-users"></i> new closet
+            <i class="fas fa-plus-circle"></i> new closet
+            <% end %>
+          </li>
+          <li>
+            <%= link_to dresses_path,class: 'nav-link text-light' do %>
+            <i class="fas fa-tshirt"></i> all closet
             <% end %>
           </li>
           <li>
             <%=  link_to users_path ,class: 'nav-link text-light' do %>
-              <i class="fas fa-book-open"></i> others
+            <i class="fas fa-users"></i> others
             <% end %>
           </li>
           <li>
@@ -39,7 +41,7 @@
           </li>
           <li>
             <%= link_to about_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-link"></i> about
+              <i class="fas fa-sun"></i> about
             <% end %>
           </li>
           <li>

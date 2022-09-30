@@ -2,17 +2,15 @@
   margin: 30px auto;
 }
 
-.table {
-  width: 60%;
-  margin: 10px auto;
-}
 
-.table {
-  float: left;
-}
 
 .text-success {
   margin: 30px auto;
+}
+
+.main-image {
+  width: 100%;
+  height: 30vh;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

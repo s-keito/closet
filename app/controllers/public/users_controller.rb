@@ -5,12 +5,12 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @seasons = Season.all
-    @dresses = params[:seasonal].present? ? Season.find(params[:seasonal]).dresses : Dress.all
+    # @seasons = Season.all
+    # @dresses = params[:season_id].present? ? Season.find(params[:season_id]).dresses : Dress.all
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
   end
 
   def edit
@@ -28,7 +28,7 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :user_image)
+    params.require(:user).permit(:name, :introduction, :user_image, :season_id, :seasonal)
   end
 
   def ensure_correct_user

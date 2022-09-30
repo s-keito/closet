@@ -13,13 +13,15 @@
     <%= f.text_area :caption, class: 'form-control dress_caption' %>
   </div>
 
-<div class="form-group">
- <%= f.select :category, Dress.categories.keys %>
-</div>
+  <div class="form-group">
+  <%= f.label :category, "category" %>
+   <%= f.select :category, Dress.categories.keys %>
+  </div>
 
-<div class="form-group">
-  <%= f.select :season_id, options_from_collection_for_select(Season.all, :id, :seasonal) %>
-</div>
+  <div class="form-group">
+    <%= f.label :season_id, "season" %>
+    <%= f.select :season_id, options_from_collection_for_select(Season.all, :id, :seasonal) %>
+  </div>
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
